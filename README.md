@@ -119,4 +119,4 @@ This app is for **educational and prototyping purposes only**. It is not intende
 Pavithra Senthilkumar | `pavi2803`
 
 * GitHub: [@pavi2803](https://github.com/pavi2803)
-* Email: [pavithrasenthil03@gmail.com](mailto:pavithrasenthil03@gmail.com)
+* Email: [ps12049@usc.edu](mailto:ps12049@usc.edu)
