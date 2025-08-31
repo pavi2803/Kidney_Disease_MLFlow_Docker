@@ -1,4 +1,4 @@
-# Dockerfile
+# Use python base image (default is amd64)
 FROM python:3.12.7
 
 WORKDIR /app
