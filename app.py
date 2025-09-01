@@ -29,6 +29,7 @@ st.markdown("---")
 # File uploader
 uploaded_file = st.file_uploader("📤 Upload your kidney scan (JPG, PNG)", type=["jpg", "jpeg", "png"])
 
+
 # Download sample image
 st.markdown("#### 🧪 Don't have a scan? Try with this sample CT image:")
 col1, col2 = st.columns([1,1])
