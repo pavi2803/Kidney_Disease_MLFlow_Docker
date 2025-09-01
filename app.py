@@ -27,23 +27,30 @@ Upload a renal image and this model will predict if there is a risk of <strong>K
 st.markdown("---")
 
 # File uploader
-uploaded_file = st.file_uploader("📤 Upload your kidney scan (JPG, PNG)", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader("Upload your kidney CT scan (JPG, PNG) to detect abnormalities", type=["jpg", "jpeg", "png"])
 
-# Download sample image
-st.markdown("#### 🧪 Don't have a scan? Try with this sample CT image:")
-col1, col2 = st.columns([1,1])
-with col1:
-    st.image(sample_img, caption="Sample Kidney CT", width=200)
-with col2:
-    buf = BytesIO()
-    sample_img.save(buf, format="PNG")
-    byte_im = buf.getvalue()
-    st.download_button(
-        label="⬇️ Download Sample CT",
-        data=byte_im,
-        file_name="sample_kidney_ct.png",
-        mime="image/png"
-    )
+
+st.markdown(
+    "<p style='font-size:14px; color:#555; text-align:center;'>Don't have a CT Scan? Try downloading this sample CT scan and upload it!</p>",
+    unsafe_allow_html=True
+)
+
+# Centered image
+st.image(sample_img, caption="Sample Kidney CT", width=200, use_column_width=False)
+
+# Centered download button
+buf = BytesIO()
+sample_img.save(buf, format="PNG")
+byte_im = buf.getvalue()
+st.download_button(
+    label="⬇️ Download Sample CT",
+    data=byte_im,
+    file_name="sample_kidney_ct.png",
+    mime="image/png",
+    key="download_ct",
+    help="Click to download the sample CT scan",
+)
+
 
 # Preprocessing function
 def preprocess(img_bytes):
